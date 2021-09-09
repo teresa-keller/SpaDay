@@ -17,7 +17,7 @@
 
     <h5>Facial Treatments</h5>
     <p>@ViewBag.skintype skin type is best suited to the follow facial types:</p>
-    
+
     <ul>
         @foreach (string facial in ViewBag.appropriateFacials)
         {
@@ -27,6 +27,22 @@
     </ul>
 
     <h5>Nail Services</h5>
-    // TODO: display a description for the nail service selected
-    
+    @if (ViewBag.manipedi == "mani")
+    {
+        <label>Manicure: </label>
+        <p>@ViewBag.manicure</p>
+    }
+    else if (ViewBag.manipedi == "pedi")
+    {
+        <label>Pedicure: </label>
+        <p>@ViewBag.pedicure</p>
+    }
+    else if (ViewBag.manipedi == "both")
+    {
+        <label>Manicure: </label>
+        <p>@ViewBag.manicure</p>
+        <label>Pedicure: </label>
+        <p>@ViewBag.pedicure</p>
+    }
+
 </div>
